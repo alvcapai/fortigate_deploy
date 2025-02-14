@@ -3,8 +3,7 @@ data "ibm_is_ssh_key" "ssh_key" {
 }
 
 data "ibm_is_resource_group" "resource_group_fortigate" {
-  name = var.resource_group_fortigate.name
-  id   = var.resource_group_fortigate.id
+  name = var.resource_group_fortigate
 }
 
 resource "ibm_is_volume" "logDisk" {
@@ -23,7 +22,7 @@ resource "ibm_is_instance" "fgt1" {
   name    = "${var.cluster_name}-fortigate-${random_string.random_suffix.result}"
   image   = ibm_is_image.vnf_custom_image.id
   profile = var.profile
-  resource_group = var.resource_group_fortigate.id
+  resource_group = var.resource_group_fortigate
 
   primary_network_interface {
     name            = "${var.cluster_name}-port1-${random_string.random_suffix.result}"
