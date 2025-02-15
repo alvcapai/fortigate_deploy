@@ -1,8 +1,8 @@
-variable "region" {
-  description = "IBM Cloud region"
-  type        = string
-  default     = "us-south"
-}
+# variable "region" {
+#   description = "IBM Cloud region"
+#   type        = string
+#   default     = "us-south"
+# }
 
 // Your SSH key
 variable "ssh_public_key" {
