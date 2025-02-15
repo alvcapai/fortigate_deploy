@@ -1,3 +1,15 @@
+variable "ibmcloud_api_key" {
+  description = "IBM Cloud API Key"
+  type        = string
+  sensitive   = true
+}
+
+variable "region" {
+  description = "IBM Cloud region"
+  type        = string
+  default     = "us-south"
+}
+
 // Your SSH key
 variable "ssh_public_key" {
   default     = ""
